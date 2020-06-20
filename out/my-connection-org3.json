@@ -1,0 +1,69 @@
+{
+    "certificateAuthorities": {
+        "ca.org3.example.com": {
+            "caName": "ca-org3",
+            "httpOptions": {
+                "verify": false
+            },
+            "tlsCACerts": {
+                "pem": "crypto-config/peerOrganizations/org3.example.com/ca/ca.org3.example.com-cert.pem"
+            },
+            "url": "https://localhost:19003"
+        }
+    },
+    "client": {
+        "connection": {
+            "timeout": {
+                "peer": {
+                    "endorser": 300
+                }
+            }
+        },
+        "organization": "Org3"
+    },
+    "name": "first-network-org3",
+    "organizations": {
+        "certificateAuthorities": [
+            "ca.org3.example.com"
+        ],
+        "mspid": "Org3MSP",
+        "peers": [
+            "peer0.org3.example.com",
+            "peer1.org3.example.com",
+            "peer2.org3.example.com"
+        ]
+    },
+    "peers": {
+        "peer0.org3.example.com": {
+            "grpcOptions": {
+                "hostnameOverride": "peer0.org3.example.com",
+                "ssl-target-name-override": "peer0.org3.example.com"
+            },
+            "tlsCACerts": {
+                "pem": "crypto-config/peerOrganizations/org3.example.com/tlsca/tlsca.org3.example.com-cert.pem"
+            },
+            "url": "grpcs://localhost:23000"
+        },
+        "peer1.org3.example.com": {
+            "grpcOptions": {
+                "hostnameOverride": "peer1.org3.example.com",
+                "ssl-target-name-override": "peer1.org3.example.com"
+            },
+            "tlsCACerts": {
+                "pem": "crypto-config/peerOrganizations/org3.example.com/tlsca/tlsca.org3.example.com-cert.pem"
+            },
+            "url": "grpcs://localhost:23001"
+        },
+        "peer2.org3.example.com": {
+            "grpcOptions": {
+                "hostnameOverride": "peer2.org3.example.com",
+                "ssl-target-name-override": "peer2.org3.example.com"
+            },
+            "tlsCACerts": {
+                "pem": "crypto-config/peerOrganizations/org3.example.com/tlsca/tlsca.org3.example.com-cert.pem"
+            },
+            "url": "grpcs://localhost:23002"
+        }
+    },
+    "version": "1.0.0"
+}
